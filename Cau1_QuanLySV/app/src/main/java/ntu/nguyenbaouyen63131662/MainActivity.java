@@ -2,7 +2,10 @@ package ntu.nguyenbaouyen63131662;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBar;
@@ -21,7 +24,11 @@ public class MainActivity extends AppCompatActivity {
     ListView lv_HienThiDS;
     ArrayList<SinhVien> dsSinhVien = new ArrayList<>();
     AdapterSinhVien adapterSinhVien;
-    //Tạo một
+    //Tạo một listể lưu vị trí click Checkbox để xóa sinh viên
+    //Phải public Và do hàm main phải dùng static
+    public  static  ArrayList<Integer> vitri = new ArrayList<>();
+
+    Button btn_Xoa,btn_Them;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +47,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addEvent() {
+        //Sự kiện xóa
+        btn_Xoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(vitri.isEmpty()){
+                    for(int k:vitri){
+                        dsSinhVien.remove(k);
+                    }
+                    vitri.clear();//sau khi xoa xong cac sinhvien
+                    adapterSinhVien.notifyDataSetChanged();
+
+                }else {
+                    Toast.makeText(MainActivity.this,"Chưa chọn sinh viên để xóa.")
+                }
+
+            }
+        });
     }
 
     private void addcontrols(){
+        //
+        btn_Xoa = findViewById(R.id.btnXoa);
         lv_HienThiDS = findViewById(R.id.dsHienThi);
         dsSinhVien.add(new SinhVien("SV1","Nguyễn Bảo Uyên", true));
         dsSinhVien.add(new SinhVien("SV2","Phạm Ânh Nhật", false));
