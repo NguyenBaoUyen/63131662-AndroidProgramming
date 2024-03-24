@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public  static  ArrayList<Integer> vitri = new ArrayList<>();
 
     Button btn_Xoa,btn_Them;
+    EditText txt_ID,txt_Name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         //Sự kiện xóa
         btn_Xoa.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if(vitri.isEmpty()){
+            public void onClick(View view) {
+                if(!vitri.isEmpty()){
                     for(int k:vitri){
                         dsSinhVien.remove(k);
                     }
@@ -59,9 +61,16 @@ public class MainActivity extends AppCompatActivity {
                     adapterSinhVien.notifyDataSetChanged();
 
                 }else {
-                    Toast.makeText(MainActivity.this,"Chưa chọn sinh viên để xóa.")
+                    Toast.makeText(MainActivity.this,"Chưa chọn sinh viên để xóa.",Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+        //Sự kiện thêm
+        btn_Them.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dsSinhVien.add(new SinhVien());
             }
         });
     }
@@ -69,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
     private void addcontrols(){
         //
         btn_Xoa = findViewById(R.id.btnXoa);
+        btn_Them = findViewById(R.id.btnThem);
+        txt_ID = findViewById(R.id.txt_ID);
+        txt_Name = findViewById(R.id.txt_Ten);
         lv_HienThiDS = findViewById(R.id.dsHienThi);
         dsSinhVien.add(new SinhVien("SV1","Nguyễn Bảo Uyên", true));
         dsSinhVien.add(new SinhVien("SV2","Phạm Ânh Nhật", false));
