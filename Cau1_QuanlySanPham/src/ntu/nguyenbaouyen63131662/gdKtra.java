@@ -1,6 +1,7 @@
 package ntu.nguyenbaouyen63131662;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.Vector;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,6 +16,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class gdKtra extends JFrame {
 
@@ -24,7 +27,34 @@ public class gdKtra extends JFrame {
 	private JTextField txttensp;
 	private JTextField txtsoluong;
 	private JTextField txtdongia;
+	JComboBox comboBox = new JComboBox();
+	JLabel lbltt = new JLabel("");
 	private JTable table;
+	
+	Vector Vtieude = new Vector();
+	Vector Vndung = new Vector();
+	Vector Vdong;
+	
+	DefaultTableModel dtm=new DefaultTableModel();
+	void Tieude() {
+		Vtieude.add("Mã sp");
+		Vtieude.add("Tên sp");
+		Vtieude.add("Loại sp");
+		Vtieude.add("Đơn giá");
+		Vtieude.add("Số lượng");
+		Vtieude.add("Thành tiền");
+		
+	}
+	void Nhap(SanPham sp) {
+		Vdong = new Vector();
+		Vdong.add(sp.getMsp());
+		Vdong.add(sp.getTensp());
+		Vdong.add(sp.getDongia());
+		Vdong.add(sp.getSoluong());
+		Vdong.add(sp.tinhtien());
+		Vndung.add(Vdong);
+	}
+
 
 	/**
 	 * Launch the application.
@@ -58,7 +88,7 @@ public class gdKtra extends JFrame {
 		lblNewLabel.setBounds(20, 11, 125, 32);
 		contentPane.add(lblNewLabel);
 		
-		JComboBox comboBox = new JComboBox();
+		
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Điện thoại", "Máy Tính"}));
 		comboBox.setBounds(20, 54, 156, 32);
 		contentPane.add(comboBox);
@@ -100,6 +130,20 @@ public class gdKtra extends JFrame {
 		contentPane.add(txtdongia);
 		
 		JButton btnNewButton = new JButton("Thêm");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SanPham s=null;
+				String masp=txtmasp.getText();
+				String tensp = txttensp.getText();
+				float sl=Float.parseFloat(txtsoluong.getText());
+				float dg=Float.parseFloat(txtdongia.getText());
+				if(comboBox.getSelectedIndex()==0) {
+					s=new DienThoai(masp,tensp,sl,dg);
+				
+				}
+				
+			}
+		});
 		btnNewButton.setBounds(95, 239, 109, 32);
 		contentPane.add(btnNewButton);
 		
@@ -130,7 +174,7 @@ public class gdKtra extends JFrame {
 		lblNewLabel_1_4.setBounds(320, 470, 61, 32);
 		contentPane.add(lblNewLabel_1_4);
 		
-		JLabel lbltt = new JLabel("");
+		
 		lbltt.setForeground(new Color(255, 0, 0));
 		lbltt.setBounds(417, 476, 49, 14);
 		contentPane.add(lbltt);
