@@ -1,7 +1,7 @@
 package ntu.nguyenbaouyen63131662;
-public class DienMay extends SanPham {
+public class MayTinh extends SanPham {
 
-	public DienMay(String msp, String tensp, float soluong, float dongia) {
+	public MayTinh(String msp, String tensp, float soluong, float dongia) {
 		super(msp, tensp, soluong, dongia);
 		// TODO Auto-generated constructor stub
 	}

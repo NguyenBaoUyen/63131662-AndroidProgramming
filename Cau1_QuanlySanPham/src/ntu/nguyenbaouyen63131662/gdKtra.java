@@ -1,8 +1,8 @@
 package ntu.nguyenbaouyen63131662;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.util.Vector;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -23,38 +23,40 @@ public class gdKtra extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txtmasp;
-	private JTextField txttensp;
-	private JTextField txtsoluong;
-	private JTextField txtdongia;
-	JComboBox comboBox = new JComboBox();
-	JLabel lbltt = new JLabel("");
+	private JTextField txtMaSP;
+	private JTextField txtTenSP;
+	private JTextField txtSoLuong;
+	private JTextField txtDonGia;
+	JComboBox<String> comboBox = new JComboBox<>();
+	JLabel lblTongTien = new JLabel("");
 	private JTable table;
 	
-	Vector Vtieude = new Vector();
-	Vector Vndung = new Vector();
-	Vector Vdong;
+	Vector<String> tieuDe = new Vector<>();
+	Vector<Vector<Object>> noiDung = new Vector<>();
+	Vector<Object> dong;
+	float tongTien = 0;
 	
-	DefaultTableModel dtm=new DefaultTableModel();
-	void Tieude() {
-		Vtieude.add("Mã sp");
-		Vtieude.add("Tên sp");
-		Vtieude.add("Loại sp");
-		Vtieude.add("Đơn giá");
-		Vtieude.add("Số lượng");
-		Vtieude.add("Thành tiền");
+	DefaultTableModel dtm = new DefaultTableModel();
+	
+	void khoiTaoTieuDe() {
+		tieuDe.add("Mã SP");
+		tieuDe.add("Tên SP");
 		
+		tieuDe.add("Đơn giá");
+		tieuDe.add("Số lượng");
+		tieuDe.add("Thành tiền");
 	}
-	void Nhap(SanPham sp) {
-		Vdong = new Vector();
-		Vdong.add(sp.getMsp());
-		Vdong.add(sp.getTensp());
-		Vdong.add(sp.getDongia());
-		Vdong.add(sp.getSoluong());
-		Vdong.add(sp.tinhtien());
-		Vndung.add(Vdong);
+	
+	void nhapSanPham(SanPham sp) {
+		dong = new Vector<>();
+		dong.add(sp.getMsp());
+		dong.add(sp.getTensp());
+		dong.add(sp.getDongia());
+		dong.add(sp.getSoluong());
+		dong.add(sp.tinhtien());
+		noiDung.add(dong);
+		tongTien += sp.tinhtien();
 	}
-
 
 	/**
 	 * Launch the application.
@@ -63,7 +65,7 @@ public class gdKtra extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					gdKtra frame = new gdKtra();
+					gdKtra frame = new gdKtra(); // Sửa từ gdKtra thành GiaoDienKiemTra
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -72,10 +74,12 @@ public class gdKtra extends JFrame {
 		});
 	}
 
+
 	/**
 	 * Create the frame.
 	 */
 	public gdKtra() {
+		khoiTaoTieuDe();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 642, 541);
 		contentPane = new JPanel();
@@ -84,99 +88,119 @@ public class gdKtra extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel(" SẢN PHẨM");
-		lblNewLabel.setBounds(20, 11, 125, 32);
-		contentPane.add(lblNewLabel);
+		JLabel lblTieuDe = new JLabel(" SẢN PHẨM");
+		lblTieuDe.setBounds(20, 11, 125, 32);
+		contentPane.add(lblTieuDe);
 		
 		
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Điện thoại", "Máy Tính"}));
+		comboBox.setModel(new DefaultComboBoxModel<>(new String[] {"Điện thoại", "Máy Tính"}));
 		comboBox.setBounds(20, 54, 156, 32);
 		contentPane.add(comboBox);
 		
-		JLabel lblNewLabel_1 = new JLabel("Mã sp");
-		lblNewLabel_1.setBounds(205, 54, 61, 32);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblMaSP = new JLabel("Mã SP");
+		lblMaSP.setBounds(205, 54, 61, 32);
+		contentPane.add(lblMaSP);
 		
-		txtmasp = new JTextField();
-		txtmasp.setBounds(276, 57, 156, 27);
-		contentPane.add(txtmasp);
-		txtmasp.setColumns(10);
+		txtMaSP = new JTextField();
+		txtMaSP.setBounds(276, 57, 156, 27);
+		contentPane.add(txtMaSP);
+		txtMaSP.setColumns(10);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Tên sp");
-		lblNewLabel_1_1.setBounds(205, 88, 61, 32);
-		contentPane.add(lblNewLabel_1_1);
+		JLabel lblTenSP = new JLabel("Tên SP");
+		lblTenSP.setBounds(205, 88, 61, 32);
+		contentPane.add(lblTenSP);
 		
-		txttensp = new JTextField();
-		txttensp.setColumns(10);
-		txttensp.setBounds(276, 91, 156, 27);
-		contentPane.add(txttensp);
+		txtTenSP = new JTextField();
+		txtTenSP.setColumns(10);
+		txtTenSP.setBounds(276, 91, 156, 27);
+		contentPane.add(txtTenSP);
 		
-		JLabel lblNewLabel_1_2 = new JLabel("Số Lượng");
-		lblNewLabel_1_2.setBounds(205, 126, 61, 32);
-		contentPane.add(lblNewLabel_1_2);
+		JLabel lblSoLuong = new JLabel("Số Lượng");
+		lblSoLuong.setBounds(205, 126, 61, 32);
+		contentPane.add(lblSoLuong);
 		
-		txtsoluong = new JTextField();
-		txtsoluong.setColumns(10);
-		txtsoluong.setBounds(276, 129, 156, 27);
-		contentPane.add(txtsoluong);
+		txtSoLuong = new JTextField();
+		txtSoLuong.setColumns(10);
+		txtSoLuong.setBounds(276, 129, 156, 27);
+		contentPane.add(txtSoLuong);
 		
-		JLabel lblNewLabel_1_3 = new JLabel("Đơn giá");
-		lblNewLabel_1_3.setBounds(205, 166, 61, 32);
-		contentPane.add(lblNewLabel_1_3);
+		JLabel lblDonGia = new JLabel("Đơn giá");
+		lblDonGia.setBounds(205, 166, 61, 32);
+		contentPane.add(lblDonGia);
 		
-		txtdongia = new JTextField();
-		txtdongia.setColumns(10);
-		txtdongia.setBounds(276, 169, 156, 27);
-		contentPane.add(txtdongia);
+		txtDonGia = new JTextField();
+		txtDonGia.setColumns(10);
+		txtDonGia.setBounds(276, 169, 156, 27);
+		contentPane.add(txtDonGia);
 		
-		JButton btnNewButton = new JButton("Thêm");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnThem = new JButton("Thêm");
+		btnThem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SanPham s=null;
-				String masp=txtmasp.getText();
-				String tensp = txttensp.getText();
-				float sl=Float.parseFloat(txtsoluong.getText());
-				float dg=Float.parseFloat(txtdongia.getText());
-				if(comboBox.getSelectedIndex()==0) {
-					s=new DienThoai(masp,tensp,sl,dg);
-				
+				SanPham sp = null;
+				String maSP = txtMaSP.getText();
+				String tenSP = txtTenSP.getText();
+				float soLuong = Float.parseFloat(txtSoLuong.getText());
+				float donGia = Float.parseFloat(txtDonGia.getText());
+				if(comboBox.getSelectedIndex() == 0) {
+					sp = new DienThoai(maSP, tenSP, soLuong, donGia);
 				}
-				
+				if(comboBox.getSelectedIndex() == 1) {
+					sp = new MayTinh(maSP, tenSP, soLuong, donGia);
+				}
+				lblTongTien.setText("" + tongTien);
+				nhapSanPham(sp);
+				dtm.setDataVector(noiDung, tieuDe);
+				table.setModel(dtm);
 			}
 		});
-		btnNewButton.setBounds(95, 239, 109, 32);
-		contentPane.add(btnNewButton);
+		btnThem.setBounds(95, 239, 109, 32);
+		contentPane.add(btnThem);
+		//Xử lý xóa
 		
-		JButton btnXa = new JButton("Xóa");
-		btnXa.setBounds(254, 239, 109, 32);
-		contentPane.add(btnXa);
+		JButton btnXoa = new JButton("Xóa");
+		btnXoa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txtDonGia.setText("");
+				txtMaSP.setText("");
+				txtSoLuong.setText("");
+				txtTenSP.setText("");
+				dong.clear();
+				dtm.setDataVector (noiDung, tieuDe);
+				table.setModel(dtm);
+			}
+		});
+		btnXoa.setBounds(254, 239, 109, 32);
+		contentPane.add(btnXoa);
 		
-		JButton btnThot = new JButton("Thoát");
-		btnThot.setBounds(415, 239, 109, 32);
-		contentPane.add(btnThot);
+		JButton btnThoat = new JButton("Thoát");
+		btnThoat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnThoat.setBounds(415, 239, 109, 32);
+		contentPane.add(btnThoat);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(20, 286, 598, 179);
+		scrollPane.setBounds(20, 292, 598, 179);
 		contentPane.add(scrollPane);
-		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null},
+				{null, null, null, null, null},
 			},
 			new String[] {
-				"M\u00E3 sp", "T\u00EAn sp", "Lo\u1EA1i sp", "S\u1ED1 l\u01B0\u1EE3ng", "\u0110\u01A1n gi\u00E1", "Th\u00E0nh ti\u1EC1n"
+				"M\u00E3 SP", "T\u00EAn SP", "S\u1ED1 L\u01B0\u1EE3ng", "Th\u00E0nh ti\u1EC1n", "\u0110\u01A1n gi\u00E1"
 			}
 		));
 		scrollPane.setViewportView(table);
 		
-		JLabel lblNewLabel_1_4 = new JLabel("Tổng tiền");
-		lblNewLabel_1_4.setBounds(320, 470, 61, 32);
-		contentPane.add(lblNewLabel_1_4);
+		JLabel lblTongTienLabel = new JLabel("Tổng tiền");
+		lblTongTienLabel.setBounds(320, 470, 61, 32);
+		contentPane.add(lblTongTienLabel);
 		
-		
-		lbltt.setForeground(new Color(255, 0, 0));
-		lbltt.setBounds(417, 476, 49, 14);
-		contentPane.add(lbltt);
+		lblTongTien.setForeground(new Color(255, 0, 0));
+		lblTongTien.setBounds(417, 476, 125, 17);
+		contentPane.add(lblTongTien);
 	}
 }
