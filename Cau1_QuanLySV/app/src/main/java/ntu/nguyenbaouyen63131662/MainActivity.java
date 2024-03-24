@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     EditText txt_ID,txt_Name;
     RadioButton rdo_btnNam;
     boolean gioitinh=true;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
