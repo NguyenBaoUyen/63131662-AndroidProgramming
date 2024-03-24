@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn_Xoa,btn_Them;
     EditText txt_ID,txt_Name;
+    RadioButton rdo_btnNam;
+    boolean gioitinh=true;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,11 +70,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        if (rdo_btnNam.isChecked()){
+            gioitinh=true;
+        }else {
+            gioitinh=false;
+        }
         //Sự kiện thêm
         btn_Them.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View view) {
-                dsSinhVien.add(new SinhVien());
+                dsSinhVien.add(new SinhVien(txt_ID.getText().toString(),txt_Name.getText().toString(),gioitinh));
             }
         });
     }
@@ -81,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         btn_Them = findViewById(R.id.btnThem);
         txt_ID = findViewById(R.id.txt_ID);
         txt_Name = findViewById(R.id.txt_Ten);
+        rdo_btnNam = findViewById(R.id.radioBtnNam);
         lv_HienThiDS = findViewById(R.id.dsHienThi);
         dsSinhVien.add(new SinhVien("SV1","Nguyễn Bảo Uyên", true));
         dsSinhVien.add(new SinhVien("SV2","Phạm Ânh Nhật", false));
