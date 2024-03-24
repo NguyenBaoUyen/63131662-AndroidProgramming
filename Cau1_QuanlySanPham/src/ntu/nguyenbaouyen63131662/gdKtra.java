@@ -36,12 +36,12 @@ public class gdKtra extends JFrame {
 	Vector<Object> dong;
 	float tongTien = 0;
 	
+	
 	DefaultTableModel dtm = new DefaultTableModel();
 	
 	void khoiTaoTieuDe() {
 		tieuDe.add("Mã SP");
-		tieuDe.add("Tên SP");
-		
+		tieuDe.add("Tên SP");		
 		tieuDe.add("Đơn giá");
 		tieuDe.add("Số lượng");
 		tieuDe.add("Thành tiền");
@@ -49,13 +49,18 @@ public class gdKtra extends JFrame {
 	
 	void nhapSanPham(SanPham sp) {
 		dong = new Vector<>();
-		dong.add(sp.getMsp());
-		dong.add(sp.getTensp());
-		dong.add(sp.getDongia());
-		dong.add(sp.getSoluong());
-		dong.add(sp.tinhtien());
-		noiDung.add(dong);
-		tongTien += sp.tinhtien();
+	    dong.add(sp.getMsp());
+	    dong.add(sp.getTensp());
+	    dong.add(sp.getDongia());
+	    dong.add(sp.getSoluong());
+	    float thanhTien = sp.tinhtien(); // Tính toán thành tiền
+	    dong.add(thanhTien);
+	    noiDung.add(dong);
+	    tongTien += thanhTien; // Cập nhật tổng tiền
+	    hienThiTongTien(); // Gọi phương thức hiển thị tổng tiền
+	}
+	void hienThiTongTien() {
+	    lblTongTien.setText(String.valueOf(tongTien)); // Hiển thị tổng tiền lên giao diện
 	}
 
 	/**
@@ -161,12 +166,14 @@ public class gdKtra extends JFrame {
 		btnXoa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				txtDonGia.setText("");
-				txtMaSP.setText("");
-				txtSoLuong.setText("");
-				txtTenSP.setText("");
-				dong.clear();
-				dtm.setDataVector (noiDung, tieuDe);
-				table.setModel(dtm);
+		        txtMaSP.setText("");
+		        txtSoLuong.setText("");
+		        txtTenSP.setText("");
+		        
+		        dtm.setDataVector(noiDung, tieuDe); // Cập nhật model
+		        table.setModel(dtm); // Cập nhật bảng
+		        tongTien = 0; // Reset tổng tiền về 0
+		        hienThiTongTien(); // Hiển thị tổng tiền mới
 			}
 		});
 		btnXoa.setBounds(254, 239, 109, 32);
