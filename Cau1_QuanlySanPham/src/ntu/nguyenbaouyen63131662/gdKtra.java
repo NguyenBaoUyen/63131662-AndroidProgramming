@@ -128,7 +128,7 @@ public class gdKtra extends JFrame {
         txtDonGia.setColumns(10);
         txtDonGia.setBounds(276, 169, 156, 27);
         contentPane.add(txtDonGia);
-
+        //Xử lý thêm
         JButton btnThem = new JButton("Thêm");
         btnThem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -150,7 +150,7 @@ public class gdKtra extends JFrame {
         });
         btnThem.setBounds(95, 239, 109, 32);
         contentPane.add(btnThem);
-
+        //Xử lý xóa
         JButton btnXoa = new JButton("Xóa");
         btnXoa.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -176,6 +176,7 @@ public class gdKtra extends JFrame {
                 System.exit(0);
             }
         });
+    
         btnThoat.setBounds(415, 239, 109, 32);
         contentPane.add(btnThoat);
 
@@ -201,8 +202,7 @@ public class gdKtra extends JFrame {
                 lblTongTien.setForeground(new Color(255, 0, 0));
                 lblTongTien.setBounds(417, 476, 125, 17);
                 contentPane.add(lblTongTien);
-
-                // Thêm bộ lắng nghe sự kiện cho bảng
+             // Thêm bộ lắng nghe sự kiện cho bảng
                 table.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
@@ -218,6 +218,8 @@ public class gdKtra extends JFrame {
                         }
                     }
                 });
+
+                
          	}
           }
 
