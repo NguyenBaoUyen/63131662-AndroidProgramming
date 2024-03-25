@@ -36,7 +36,6 @@ public class gdKtra extends JFrame {
 	Vector<Object> dong;
 	float tongTien = 0;
 	
-	
 	DefaultTableModel dtm = new DefaultTableModel();
 	
 	void khoiTaoTieuDe() {
@@ -70,7 +69,7 @@ public class gdKtra extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					gdKtra frame = new gdKtra(); // Sửa từ gdKtra thành GiaoDienKiemTra
+					gdKtra frame = new gdKtra(); 
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -166,14 +165,12 @@ public class gdKtra extends JFrame {
 		btnXoa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				txtDonGia.setText("");
-		        txtMaSP.setText("");
-		        txtSoLuong.setText("");
-		        txtTenSP.setText("");
-		        
-		        dtm.setDataVector(noiDung, tieuDe); // Cập nhật model
-		        table.setModel(dtm); // Cập nhật bảng
-		        tongTien = 0; // Reset tổng tiền về 0
-		        hienThiTongTien(); // Hiển thị tổng tiền mới
+				txtMaSP.setText("");
+				txtSoLuong.setText("");
+				txtTenSP.setText("");
+				dong.clear();
+				dtm.setDataVector (noiDung, tieuDe);
+				table.setModel(dtm);
 			}
 		});
 		btnXoa.setBounds(254, 239, 109, 32);
