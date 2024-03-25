@@ -16,10 +16,10 @@
         android:background="@drawable/button_br"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.964">
+        app:layout_constraintVertical_bias="1.0">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -47,7 +47,7 @@
             android:ems="10"
             android:inputType="text"
 
-            android:text="Quê quán:Khánh Hòa"
+            android:text="  Quê quán: Khánh Hòa"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -66,13 +66,53 @@
             android:background="@drawable/nen"
             android:ems="10"
             android:inputType="text"
-            android:text="    Lớp 63cntt-2"
+            android:text="  Lớp: 63cntt-2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText"
             app:layout_constraintVertical_bias="0.422" />
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="150dp"
+            android:background="@drawable/nen"
+            android:ems="10"
+            android:inputType="text"
+            android:text="  Sở thích: du lịch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText2"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="100dp"
+            android:background="#EFA3BD"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:text="    Mail: uyen.nb.63cntt@ntu.edu.vn"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+            app:layout_constraintVertical_bias="0.0" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
