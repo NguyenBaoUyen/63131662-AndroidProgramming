@@ -94,11 +94,11 @@ public class MainActivity extends AppCompatActivity {
         rdo_btnNam = findViewById(R.id.radioBtnNam);
         lv_HienThiDS = findViewById(R.id.dsHienThi);
         dsSinhVien.add(new SinhVien("SV1","Nguyễn Bảo Uyên", true));
-        dsSinhVien.add(new SinhVien("SV2","Phạm Ânh Nhật", false));
-        dsSinhVien.add(new SinhVien("SV3","Trần Thiij Hương Thủy", true));
+        dsSinhVien.add(new SinhVien("SV2","Phạm Anh Nhật", false));
+        dsSinhVien.add(new SinhVien("SV3","Trần Thị Hương Thủy", true));
         dsSinhVien.add(new SinhVien("SV4","Lê Phan Bảo Ngọc", true));
         dsSinhVien.add(new SinhVien("SV5","Lê Tường Vy", true));
-        dsSinhVien.add(new SinhVien("SV6","Nguễn Bảo Hân", true));
+        dsSinhVien.add(new SinhVien("SV6","Nguyễn Bảo Hân", true));
         dsSinhVien.add(new SinhVien("SV7","Trần Lê Thanh Tùng", false));
         dsSinhVien.add(new SinhVien("SV8","Đàm Viết Trọng", false));
         adapterSinhVien = new AdapterSinhVien(
