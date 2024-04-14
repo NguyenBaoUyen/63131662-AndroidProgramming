@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         dsTenTinhThanhVN.add("Nha Trang");
         dsTenTinhThanhVN.add("Phú Yên");
         dsTenTinhThanhVN.add("Hồ Chí Minh");
-        dsTenTinhThanhVN.add("Đ Nẵng");
+        dsTenTinhThanhVN.add("Đà Nẵng");
         dsTenTinhThanhVN.add("Đà Lạt");
         //tạo adapter
         ArrayAdapter<String> adapterTinhThanhVN;
