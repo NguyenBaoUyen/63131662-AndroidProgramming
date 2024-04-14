@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,12 +26,8 @@ public class MainActivity extends AppCompatActivity {
         //4
         recyclerViewLandScape = findViewById(recyclerLand);
         //5
-//        RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(this);
-//       recyclerViewLandScape.setLayoutManager(layoutLinear);
-        RecyclerView.LayoutManager layoutLinearHorizonal = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
-        recyclerViewLandScape.setLayoutManager(layoutLinearHorizonal);
-        // RecyclerView.LayoutManager layoutGrid = new GridLayoutManager(this,2);
-        // recyclerViewLandScape.setLayoutManager(layoutGrid);
+       RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(this);
+       recyclerViewLandScape.setLayoutManager(layoutLinear);
         //6
         landScapeAdapter = new LandScapeAdapter(this, recyclerViewDatas);
         //7
