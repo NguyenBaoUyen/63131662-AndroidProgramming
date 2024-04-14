@@ -4,13 +4,16 @@ public class LandScape {
     String landImageFileName;
     String landCation;
 
-    public String getLandImageFileName() {
-        return landImageFileName;
-    }
+
 
     public LandScape(String landImageFileName, String landCation) {
         this.landImageFileName = landImageFileName;
         this.landCation = landCation;
+    }
+
+
+    public String getLandImageFileName() {
+        return landImageFileName;
     }
 
     public void setLandImageFileName(String landImageFileName) {
