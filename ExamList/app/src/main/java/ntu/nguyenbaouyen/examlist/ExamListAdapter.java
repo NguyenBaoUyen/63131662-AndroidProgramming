@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -62,13 +63,13 @@ public class ExamListAdapter extends RecyclerView.Adapter<ExamListAdapter.ItemLa
         @Override
         public void onClick(View v) {
             int vitriDuocClick = getAdapterPosition();
-            Exam phanTuDuocClick = lsData.get(vitriDuocClick);
+            ExamList phanTuDuocClick = lsData.get(vitriDuocClick);
             //bóc thông tin
             String ten = phanTuDuocClick.getName();
             String ngay = phanTuDuocClick.getDate();
             String ghiChu = phanTuDuocClick.getNote();
             //Toat tên
-            String chuoiThongBao = "Bạn vừa chọn: " + ten;
+            String chuoiThongBao = "Bạn đã chọn: " + ten;
             Toast.makeText(v.getContext(),chuoiThongBao,Toast.LENGTH_SHORT).show();
         }
     }
