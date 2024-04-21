@@ -2,34 +2,40 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".SubActivityOne">
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="310dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="68dp"
-        android:text="BẠN ĐANG Ở MÀN HÌNH THỨ HAI"
-        android:background="#E6B2C4"
+        android:id="@+id/textView2"
+        android:layout_width="296dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="82dp"
         android:gravity="center"
+        android:layout_marginEnd="63dp"
+        android:background="#B094E3"
+        android:text="BẠN ĐANG Ở MÀN HÌNH THỨ 2"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="246dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="140dp"
+    <Button
+        android:id="@+id/btnQuayLai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="90dp"
+        android:background="#B094E3"
+        android:onClick="QuayVe"
         android:text="QUAY LẠI TRANG CHỦ"
-        android:gravity="center"
-        android:background="#EC93B1"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
