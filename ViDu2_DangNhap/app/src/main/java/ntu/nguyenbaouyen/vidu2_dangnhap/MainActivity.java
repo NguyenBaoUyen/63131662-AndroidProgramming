@@ -16,14 +16,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
-    //Hàm đáp ứng sự kiện nhấn lên nút "Sang màn hình khác"
-    //Xử lý chuyển màn hình
-    public void DangNhap( View v){
-        //Tạo một đối tượng Intent
-        Intent iLogin = new Intent(this, LoginActivity.class);
-        startActivity(iLogin);
+    public void DangNhap(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
