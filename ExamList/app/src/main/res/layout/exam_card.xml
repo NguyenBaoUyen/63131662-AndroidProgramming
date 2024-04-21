@@ -22,20 +22,23 @@
             <TextView
                 android:id="@+id/tvExamName"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="20dp"
                 android:text="Exam Name"
+                android:gravity="center"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="#EA9BB6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/ivExamDate"
-                android:layout_width="42dp"
-                android:layout_height="36dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="22dp"
                 android:layout_marginEnd="10dp"
                 app:layout_constraintEnd_toStartOf="@+id/tvExamDate"
@@ -56,8 +59,8 @@
 
             <ImageView
                 android:id="@+id/ivExamNote"
-                android:layout_width="47dp"
-                android:layout_height="43dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="22dp"
                 android:layout_marginEnd="10dp"
                 app:layout_constraintEnd_toStartOf="@+id/tvExamNote"
