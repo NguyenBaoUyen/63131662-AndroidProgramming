@@ -3,16 +3,16 @@
 
     <item
         android:id="@+id/algorithm"
-        android:icon="@drawable/algorithm"
+        android:icon="@android:drawable/ic_menu_agenda"
         android:title="Algorithm" />
 
     <item
         android:id="@+id/course"
-        android:icon="@drawable/course"
+        android:icon="@drawable/sour"
         android:title="Course" />
 
     <item
         android:id="@+id/profile"
-        android:icon="@drawable/account"
+        android:icon="@drawable/ac"
         android:title="Profile" />
 </menu>
