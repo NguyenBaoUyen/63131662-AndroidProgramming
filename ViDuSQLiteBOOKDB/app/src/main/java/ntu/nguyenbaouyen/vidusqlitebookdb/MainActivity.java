@@ -1,5 +1,7 @@
 package ntu.nguyenbaouyen.vidusqlitebookdb;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -8,17 +10,50 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        // Bước 0. Tạo file cơ sở dữ liệu
+        SQLiteDatabase db = openOrCreateDatabase("QLSach.db", // tên file = tên DB
+                MODE_PRIVATE,  // giới hạn truy cập
+                null          // con trỏ bản ghi
+        );
+        // B1. Tạo bảng
+        // câu lêệnh tạo bảng
+        String sqlXoaBangNeuDaCo = "DROP TABLE IF EXISTS Books;";
+
+        String sqlTaoBang = "CREATE TABLE Books( BookID integer PRIMARY KEY, " +
+                "BookName text, " +
+                "Page integer, " +
+                "Price Float, " +
+                "Description text);";
+        // thực hiện lệnh sql
+        db.execSQL(sqlXoaBangNeuDaCo);
+        db.execSQL(sqlTaoBang);
+        // Thêm một số dòng dữ liệu vào bảng
+        String sqlThem1 = "INSERT INTO Books VALUES(1, 'Java', 100, 9.99, 'sách về java');";
+        String sqlThem2 = "INSERT INTO Books VALUES(2, 'Android', 320, 19.00, 'Android cơ bản');";
+        String sqlThem3 = "INSERT INTO Books VALUES(3, 'Học làm giàu', 120, 0.99, 'sách đọc cho vui');";
+        String sqlThem4 = "INSERT INTO Books VALUES(4, 'Tử điển Anh-Việt', 1000, 29.50, 'Từ điển 100.000 từ');";
+        String sqlThem5 = "INSERT INTO Books VALUES(5, 'CNXH', 1, 1, 'chuyện cổ tích');";
+        db.execSQL(sqlThem1);
+        db.execSQL(sqlThem2);
+        db.execSQL(sqlThem3);
+        db.execSQL(sqlThem4);
+        db.execSQL(sqlThem5);
+        // Để quan sát trực quan file .db ? ==> Dùng ứng dụng DB Browser for SQLite
+        // Để mở được, ta file save file từ điện thoại ra đĩa cứng
+
+        // Ta đóng lại để check
+        db.close();
+
+//
     }
 }
+
