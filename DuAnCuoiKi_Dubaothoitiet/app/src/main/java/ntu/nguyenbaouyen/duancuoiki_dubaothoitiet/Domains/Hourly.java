@@ -2,7 +2,7 @@ package ntu.nguyenbaouyen.duancuoiki_dubaothoitiet.Domains;
 
 public class Hourly {
     private String gio;
-    private int nhiet;
+    private String nhiet;
     private String duongDan;
 
     public String getGio() {
@@ -13,11 +13,11 @@ public class Hourly {
         this.gio = gio;
     }
 
-    public int getNhiet() {
+    public String getNhiet() {
         return nhiet;
     }
 
-    public void setNhiet(int nhiet) {
+    public void setNhiet(String nhiet) {
         this.nhiet = nhiet;
     }
 
@@ -29,7 +29,7 @@ public class Hourly {
         this.duongDan = duongDan;
     }
 
-    public Hourly(String gio, int nhiet, String duongDan) {
+    public Hourly(String gio, String nhiet, String duongDan) {
         this.gio = gio;
         this.nhiet = nhiet;
         this.duongDan = duongDan;

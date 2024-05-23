@@ -3,6 +3,7 @@
     <style name="Base.Theme.DuAnCuoiKi_Dubaothoitiet" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimaryDark">@color/background_color</item>
     </style>
 
     <style name="Theme.DuAnCuoiKi_Dubaothoitiet" parent="Base.Theme.DuAnCuoiKi_Dubaothoitiet" />

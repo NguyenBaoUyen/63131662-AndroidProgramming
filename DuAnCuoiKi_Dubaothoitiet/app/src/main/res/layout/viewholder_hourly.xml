@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="90dp"
     android:layout_height="wrap_content"
-    android:background="@drawable/white_houly_background"
     android:layout_margin="8dp"
+    android:background="@drawable/white_houly_background"
     android:elevation="3dp">
 
     <LinearLayout
@@ -24,11 +24,11 @@
 
         <ImageView
             android:id="@+id/hinh"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_margin="8dp"
-            app:srcCompat="@drawable/may"
+            
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView

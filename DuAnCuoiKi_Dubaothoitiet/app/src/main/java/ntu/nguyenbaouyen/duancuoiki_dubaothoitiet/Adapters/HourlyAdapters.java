@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 import ntu.nguyenbaouyen.duancuoiki_dubaothoitiet.Domains.Hourly;
@@ -36,8 +38,11 @@ public class HourlyAdapters extends RecyclerView.Adapter<HourlyAdapters.viewhold
     holder.giotxt.setText(item.get(position).getGio());
     holder.nhiettxt.setText(item.get(position).getNhiet()+"");
 
-    int drawableRéourceId=holder.itemView.getResources()
+    int drawableResourceId=holder.itemView.getResources()
             .getIdentifier(item.get(position).getDuongDan(),"drawwable",holder.itemView.getContext().getPackageName());
+        Glide.with(context)
+                .load(drawableResourceId)
+                .into(holder.hinh);
     }
 
     @Override
