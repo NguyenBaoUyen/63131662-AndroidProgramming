@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initRecyclerview() {
         ArrayList<Hourly> items= new ArrayList<>();
-        items.add(new Hourly("00 am","25°","mưa"));
-        items.add(new Hourly("6 am","26°","âm u"));
-        items.add(new Hourly("12 am","27°","mây"));
-        items.add(new Hourly("6 pm","28°","gió"));
-        items.add(new Hourly("12 pm","27°","nhiều mây "));
+        items.add(new Hourly("00 am","25°","bao_tuyet"));
+        items.add(new Hourly("6 am","26°","co_may"));
+        items.add(new Hourly("12 am","27°","may"));
+        items.add(new Hourly("6 pm","28°","nang"));
+        items.add(new Hourly("12 pm","27°","tuyet_roi"));
 
         recyclerView=findViewById(R.id.view1);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));

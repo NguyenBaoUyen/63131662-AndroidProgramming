@@ -36,10 +36,10 @@ public class HourlyAdapters extends RecyclerView.Adapter<HourlyAdapters.viewhold
     @Override
     public void onBindViewHolder(@NonNull HourlyAdapters.viewholder holder, int position) {
     holder.giotxt.setText(item.get(position).getGio());
-    holder.nhiettxt.setText(item.get(position).getNhiet()+"");
+    holder.nhiettxt.setText(item.get(position).getNhiet());
 
     int drawableResourceId=holder.itemView.getResources()
-            .getIdentifier(item.get(position).getDuongDan(),"drawwable",holder.itemView.getContext().getPackageName());
+            .getIdentifier(item.get(position).getDuongDan(),"drawable",holder.itemView.getContext().getPackageName());
         Glide.with(context)
                 .load(drawableResourceId)
                 .into(holder.hinh);

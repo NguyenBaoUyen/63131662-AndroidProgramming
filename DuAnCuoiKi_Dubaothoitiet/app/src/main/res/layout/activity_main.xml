@@ -38,7 +38,7 @@
                     android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="16dp"
-                    tools:srcCompat="@drawable/muaa"
+                    app:srcCompat="@drawable/muaa"
 
                     />
 
