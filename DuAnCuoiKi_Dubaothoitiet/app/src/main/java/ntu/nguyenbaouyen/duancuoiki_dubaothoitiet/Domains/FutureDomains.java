@@ -4,16 +4,16 @@ public class FutureDomains {
     private String ngay;
     private String duongDan;
     private String trangThai;
-    private int doThap;
     private int doCao;
+    private int doThap;
 
 
-    public FutureDomains(String ngay, String duongDan, String trangThai, int doThap, int doCao) {
+    public FutureDomains(String ngay, String duongDan, String trangThai, int doCao, int doThap) {
         this.ngay = ngay;
         this.duongDan = duongDan;
         this.trangThai = trangThai;
-        this.doThap = doThap;
         this.doCao = doCao;
+        this.doThap = doThap;
     }
 
     public String getNgay() {
@@ -40,19 +40,19 @@ public class FutureDomains {
         this.trangThai = trangThai;
     }
 
-    public int getDoThap() {
-        return doThap;
-    }
-
-    public void setDoThap(int doThap) {
-        this.doThap = doThap;
-    }
-
     public int getDoCao() {
         return doCao;
     }
 
     public void setDoCao(int doCao) {
         this.doCao = doCao;
+    }
+
+    public int getDoThap() {
+        return doThap;
+    }
+
+    public void setDoThap(int doThap) {
+        this.doThap = doThap;
     }
 }

@@ -1,6 +1,9 @@
 package ntu.nguyenbaouyen.duancuoiki_dubaothoitiet.Activitis;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initRecyclerview();
+        setVisible();
+    }
+
+    private void setVisible() {
+        TextView nextBtn=findViewById(R.id.nextBtn);
+        nextBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,FutureActivity.class)));
     }
 
     private void initRecyclerview() {

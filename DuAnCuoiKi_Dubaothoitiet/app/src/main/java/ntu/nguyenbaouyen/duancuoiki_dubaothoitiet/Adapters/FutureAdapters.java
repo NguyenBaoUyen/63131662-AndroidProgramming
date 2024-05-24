@@ -38,8 +38,8 @@ public class FutureAdapters extends RecyclerView.Adapter<FutureAdapters.viewhold
     public void onBindViewHolder(@NonNull FutureAdapters.viewholder holder, int position) {
     holder.ngaytxt.setText(item.get(position).getNgay());
     holder.trangthaitxt.setText(item.get(position).getTrangThai());
-    holder.thaptxt.setText(item.get(position).getDoThap());
-    holder.caotxtx.setText(item.get(position).getDoCao());
+    holder.caotxtx.setText(item.get(position).getDoCao()+"°");
+    holder.thaptxt.setText(item.get(position).getDoThap()+"°");
 
     int drawableResourceId=holder.itemView.getResources()
             .getIdentifier(item.get(position).getDuongDan(),"drawable",holder.itemView.getContext().getPackageName());
@@ -60,8 +60,8 @@ public class FutureAdapters extends RecyclerView.Adapter<FutureAdapters.viewhold
             super(itemView);
             ngaytxt=itemView.findViewById(R.id.ngaytxt);
             trangthaitxt=itemView.findViewById(R.id.trangThaitxt);
-            thaptxt=itemView.findViewById(R.id.thaptxt);
             caotxtx=itemView.findViewById(R.id.caoTxt);
+            thaptxt=itemView.findViewById(R.id.thaptxt);
             hinh=itemView.findViewById(R.id.hinh);
         }
     }
