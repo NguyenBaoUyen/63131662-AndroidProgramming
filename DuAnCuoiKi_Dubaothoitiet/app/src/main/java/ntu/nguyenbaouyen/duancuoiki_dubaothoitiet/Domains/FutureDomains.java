@@ -1,34 +1,35 @@
 package ntu.nguyenbaouyen.duancuoiki_dubaothoitiet.Domains;
 
 public class FutureDomains {
-    private String ngày;
-    private String đuongDan;
+    private String ngay;
+    private String duongDan;
     private String trangThai;
-    private int nhietDo;
-    private int doAm;
+    private int doThap;
+    private int doCao;
 
-    public FutureDomains(String ngày, String đuongDan, String trangThai, int nhietDo, int doAm) {
-        this.ngày = ngày;
-        this.đuongDan = đuongDan;
+
+    public FutureDomains(String ngay, String duongDan, String trangThai, int doThap, int doCao) {
+        this.ngay = ngay;
+        this.duongDan = duongDan;
         this.trangThai = trangThai;
-        this.nhietDo = nhietDo;
-        this.doAm = doAm;
+        this.doThap = doThap;
+        this.doCao = doCao;
     }
 
-    public String getNgày() {
-        return ngày;
+    public String getNgay() {
+        return ngay;
     }
 
-    public void setNgày(String ngày) {
-        this.ngày = ngày;
+    public void setNgay(String ngay) {
+        this.ngay = ngay;
     }
 
-    public String getĐuongDan() {
-        return đuongDan;
+    public String getDuongDan() {
+        return duongDan;
     }
 
-    public void setĐuongDan(String đuongDan) {
-        this.đuongDan = đuongDan;
+    public void setDuongDan(String duongDan) {
+        this.duongDan = duongDan;
     }
 
     public String getTrangThai() {
@@ -39,19 +40,19 @@ public class FutureDomains {
         this.trangThai = trangThai;
     }
 
-    public int getNhietDo() {
-        return nhietDo;
+    public int getDoThap() {
+        return doThap;
     }
 
-    public void setNhietDo(int nhietDo) {
-        this.nhietDo = nhietDo;
+    public void setDoThap(int doThap) {
+        this.doThap = doThap;
     }
 
-    public int getDoAm() {
-        return doAm;
+    public int getDoCao() {
+        return doCao;
     }
 
-    public void setDoAm(int doAm) {
-        this.doAm = doAm;
+    public void setDoCao(int doCao) {
+        this.doCao = doCao;
     }
 }
