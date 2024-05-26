@@ -13,16 +13,19 @@
         android:theme="@style/Theme.DuAnCuoiKi_Dubaothoitiet"
         tools:targetApi="31">
         <activity
+            android:name=".Activitis.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activitis.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Activitis.WelcomeActivity"
+            android:name=".Activitis.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".Activitis.FutureActivity"
             android:exported="false" />
         <activity
-            android:name=".Activitis.LoginActivity"
+            android:name=".Activitis.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
