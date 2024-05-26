@@ -3,6 +3,7 @@ package ntu.nguyenbaouyen.duancuoiki_dubaothoitiet.Activitis;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private void setVisible() {
         TextView nextBtn=findViewById(R.id.nextBtn);
         nextBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,FutureActivity.class)));
+        ImageView nexttBtn=findViewById(R.id.thoatbtn);
+        nexttBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,LoginActivity.class)));
     }
 
     private void initRecyclerview() {

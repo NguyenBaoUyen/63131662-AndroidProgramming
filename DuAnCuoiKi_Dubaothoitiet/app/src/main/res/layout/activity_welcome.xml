@@ -8,14 +8,16 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="306dp"
-        android:layout_height="195dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="350dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo2" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/banner" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -73,7 +75,7 @@
         android:layout_marginTop="130dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="150dp"
-        android:background="@drawable/button_color"
+        android:background="@drawable/banner_background"
         android:text="Thông tin cá nhân"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -92,7 +94,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/button_color"
+        android:background="@drawable/banner_background"
         android:text="Xem thời tiết"
         android:textAlignment="center"
         android:textColor="@color/white"

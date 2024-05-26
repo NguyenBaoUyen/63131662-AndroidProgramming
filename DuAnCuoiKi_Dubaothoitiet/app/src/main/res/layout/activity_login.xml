@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background">
+        android:background="@drawable/background_welcome">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -29,7 +29,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
-                        android:text="UI Lover Channel"
+                        android:text="APP THỜI TIẾT"
                         android:textColor="#ffffff"
                         android:textSize="40sp"
                         android:textStyle="bold"
@@ -41,7 +41,7 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Login to your account"
+                        android:text="Đăng nhập để vào"
                         android:textColor="#ffffff"
                         android:textSize="25sp"
                         android:textStyle="italic"
@@ -72,7 +72,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
                         <EditText
-                            android:id="@+id/editTextTextPersonName2"
+                            android:id="@+id/username"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_margin="20dp"
@@ -80,14 +80,14 @@
                             android:drawableStart="@drawable/person"
                             android:drawablePadding="10dp"
                             android:ems="10"
-                            android:hint="UserName"
+                            android:hint="Tài khoản"
                             android:inputType="textPersonName"
                             android:paddingStart="10dp"
                             android:textColorHint="#000000"
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/editTextTextPersonName"
+                            android:id="@+id/password"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_margin="20dp"
@@ -95,7 +95,7 @@
                             android:drawableStart="@drawable/pass"
                             android:drawablePadding="10dp"
                             android:ems="10"
-                            android:hint="Password"
+                            android:hint="Mật khẩu"
                             android:inputType="textPersonName"
                             android:paddingStart="10dp"
                             android:textColorHint="#000000"
@@ -107,15 +107,15 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="12dp"
                             android:background="@drawable/btn_dark"
-                            android:text="Login"
+                            android:text="Xác nhận"
                             android:textColor="#ffffff"
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView3"
+                            android:id="@+id/mkbtn"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Forget your Password?"
+                            android:text="Quên mật khẩu ?"
                             android:textAlignment="center"
                             android:textColor="#ffffff" />
 
@@ -138,12 +138,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
 
-                                android:text="OR"
+                                android:text="HOẶC"
                                 android:textColor="#ffffff"
                                 android:textSize="20sp" />
 
                             <View
-                                android:id="@+id/view"
+                                android:id="@+id/view23"
                                 android:layout_width="wrap_content"
                                 android:layout_height="1dp"
                                 android:layout_margin="24dp"
@@ -182,16 +182,7 @@
 
                     </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:text="Don't Have An Account? SIGNUP"
-                        android:textColor="#ffffff"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>

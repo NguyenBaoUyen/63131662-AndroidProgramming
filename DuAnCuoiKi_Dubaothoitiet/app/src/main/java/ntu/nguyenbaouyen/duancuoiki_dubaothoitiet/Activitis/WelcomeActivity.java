@@ -19,10 +19,13 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         setVisible();
+
     }
 
     private void setVisible() {
         Button thoitietbtn=findViewById(R.id.thoitietbtn);
         thoitietbtn.setOnClickListener(v -> startActivity(new Intent(WelcomeActivity.this,LoginActivity.class)));
+        Button thongtinbtn=findViewById(R.id.profilebtn);
+        thongtinbtn.setOnClickListener(v -> startActivity(new Intent(WelcomeActivity.this,ProfileActivity.class)));
     }
 }

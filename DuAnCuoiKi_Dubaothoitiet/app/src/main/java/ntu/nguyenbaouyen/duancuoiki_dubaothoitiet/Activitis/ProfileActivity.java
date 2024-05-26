@@ -1,6 +1,8 @@
 package ntu.nguyenbaouyen.duancuoiki_dubaothoitiet.Activitis;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,13 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
+        setVisible();
     }
+
+    private void setVisible() {
+        ImageView outbtn = findViewById(R.id.outbtn);
+        outbtn.setOnClickListener(v -> startActivity(new Intent(ProfileActivity.this, WelcomeActivity.class)));
+    }
+
+
 }
