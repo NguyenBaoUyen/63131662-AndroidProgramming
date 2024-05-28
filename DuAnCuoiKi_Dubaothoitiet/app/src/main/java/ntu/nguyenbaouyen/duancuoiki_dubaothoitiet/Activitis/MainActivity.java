@@ -34,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void setVisible() {
         TextView nextBtn=findViewById(R.id.nextBtn);
-        nextBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,FutureActivity.class)));
+        nextBtn.setOnClickListener(v -> startActivity(
+                new Intent(MainActivity.this,FutureActivity.class)));
         ImageView nexttBtn=findViewById(R.id.thoatbtn);
-        nexttBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,LoginActivity.class)));
+        nexttBtn.setOnClickListener(v -> startActivity(
+                new Intent(MainActivity.this,LoginActivity.class)));
     }
 
     private void initRecyclerview() {
@@ -48,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         items.add(new Hourly("12 pm","27°","tuyet_roi"));
 
         recyclerView=findViewById(R.id.view1);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(
+                this,LinearLayoutManager.HORIZONTAL,false));
         adapterHourly = new HourlyAdapters(items);
         recyclerView.setAdapter(adapterHourly);
     }

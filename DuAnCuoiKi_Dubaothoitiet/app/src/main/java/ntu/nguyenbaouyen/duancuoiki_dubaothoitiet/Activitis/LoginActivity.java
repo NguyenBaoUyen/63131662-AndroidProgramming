@@ -35,13 +35,13 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(v -> {
             String username = usernameEditText.getText().toString().trim();
             String password = passwordEditText.getText().toString().trim();
-
             String validationResult = validateLogin(username, password);
 
             if ("success".equals(validationResult)) {
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
             } else {
-                Toast.makeText(LoginActivity.this, validationResult, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, validationResult,
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }

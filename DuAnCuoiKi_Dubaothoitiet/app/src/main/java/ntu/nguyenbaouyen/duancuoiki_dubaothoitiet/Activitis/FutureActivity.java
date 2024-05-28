@@ -48,8 +48,8 @@ public class FutureActivity extends AppCompatActivity {
         items.add(new FutureDomains("Thứ Ba","mua","Mưa",22,15));
         items.add(new FutureDomains("Thứ Tư","gio","Gió Nhẹ",20,13));
         items.add(new FutureDomains("Thứ Năm","gio","Gió Nhẹ",19,14));
-        items.add(new FutureDomains("Thứ Sáu","gio","Mưa Râm Râm",17,15));
-        items.add(new FutureDomains("Thứ Bảy","gio","Nhiều Mây",28,27));
+        items.add(new FutureDomains("Thứ Sáu","muaa","Mưa Râm Râm",17,15));
+        items.add(new FutureDomains("Thứ Bảy","co_may","Nhiều Mây",28,27));
         items.add(new FutureDomains("Chủ Nhật","gioo","Gió Mạnh",20,10));
         recyclerView= findViewById(R.id.view2);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));

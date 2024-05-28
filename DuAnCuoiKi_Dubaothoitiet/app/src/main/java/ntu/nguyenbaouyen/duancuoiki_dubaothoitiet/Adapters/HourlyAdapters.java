@@ -29,7 +29,8 @@ public class HourlyAdapters extends RecyclerView.Adapter<HourlyAdapters.viewhold
     @Override
     public HourlyAdapters.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_hourly,parent,false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(
+                R.layout.viewholder_hourly,parent,false);
         return new viewholder(inflate);
     }
 
@@ -39,7 +40,8 @@ public class HourlyAdapters extends RecyclerView.Adapter<HourlyAdapters.viewhold
     holder.nhiettxt.setText(item.get(position).getNhiet());
 
     int drawableResourceId=holder.itemView.getResources()
-            .getIdentifier(item.get(position).getDuongDan(),"drawable",holder.itemView.getContext().getPackageName());
+            .getIdentifier(item.get(position).getDuongDan(),
+                    "drawable",holder.itemView.getContext().getPackageName());
         Glide.with(context)
                 .load(drawableResourceId)
                 .into(holder.hinh);
@@ -51,8 +53,7 @@ public class HourlyAdapters extends RecyclerView.Adapter<HourlyAdapters.viewhold
     }
 
     public class viewholder extends RecyclerView.ViewHolder {
-        TextView giotxt,nhiettxt;
-        ImageView hinh;
+        TextView giotxt,nhiettxt;  ImageView hinh;
         public viewholder(@NonNull View itemView) {
             super(itemView);
             giotxt=itemView.findViewById(R.id.giotxt);

@@ -23,7 +23,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void setVisible() {
         ImageView outbtn = findViewById(R.id.outbtn);
-        outbtn.setOnClickListener(v -> startActivity(new Intent(ProfileActivity.this, WelcomeActivity.class)));
+        outbtn.setOnClickListener(v -> startActivity(new Intent(
+                ProfileActivity.this, WelcomeActivity.class)));
     }
 
 
